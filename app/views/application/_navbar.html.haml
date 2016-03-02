@@ -1,0 +1,21 @@
+#navbar
+  .nav
+    %ul
+      = nav_path t("titles.home.index"), root_path
+  .nav-user
+    %ul
+      %li#user-nav.dropdown
+        %a{:href => "javascript:void(0)"}
+          = current_user.first_name
+          %span.caret
+        .dropdown-menu
+          .dropdown-arrow
+          .dropdown-content
+            .user-info
+              = render "application/avatar", user: current_user
+              %span.user-name= current_user.first_name
+            %ul
+              %li= link_to t("titles.categories.index"), categories_path
+              %li= link_to t("titles.shops.index"), shops_path
+              %li.devider
+              %li= link_to t("sign_out"), destroy_user_session_path

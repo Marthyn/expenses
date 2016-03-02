@@ -1,0 +1,35 @@
+en:
+  actions:
+    edit: Edit
+
+  date:
+    formats:
+      default:
+        "%m/%d/%Y"
+      with_weekday:
+        "%a %m/%d/%y"
+
+  time:
+    formats:
+      default:
+        "%a, %b %-d, %Y at %r"
+      date:
+        "%b %-d, %Y"
+      short:
+        "%B %d"
+
+  titles:
+    application: Expenses
+
+  titles:
+    home:
+      index: Home
+    categories:
+      index: Categories
+    shops:
+      index: Shops
+
+  category:
+    edit: Edit
+
+  sign_out: Sign out

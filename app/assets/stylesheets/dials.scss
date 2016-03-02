@@ -1,0 +1,56 @@
+.totals-overview {
+  clear: both;
+
+  .spent {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto 0;
+    font-size: 1em;
+    font-weight: 100;
+    color: #999;
+    text-align: center;
+  }
+
+  .spent-chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .spent-info {
+    position: relative;
+    top: 24px;
+
+    .amount {
+      display: block;
+      font-size: 2em;
+      color: #333 !important;
+      letter-spacing: -2px;
+    }
+
+    .percent {
+      display: block;
+      margin-top: 2px;
+      color: #999;
+    }
+  }
+}
+
+.totals {
+  margin-bottom: 5px;
+  text-align: center;
+
+  li {
+    display: table-cell;
+    width: 1%;
+    border-bottom: none;
+    text-align: center;
+    padding: 11px 5px;
+    white-space: nowrap;
+  }
+
+  .total {
+
+  }
+}

@@ -1,0 +1,2 @@
+.avatar{ style: "border:0" }
+  = gravatar_image_tag(user.email, gravatar: { secure: true }, class: "image-circle", title: html_escape(user.full_name))

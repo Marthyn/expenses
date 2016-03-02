@@ -1,0 +1,9 @@
+= simple_form_for(@expense) do |f|
+  .form-inputs
+    = f.input :amount
+    = f.input :description, as: :text
+    = f.input :category_id, collection: Category.all, include_blank: "None"
+    = f.input :shop_id, collection: Shop.all, include_blank: "None"
+  %hr
+  .form-actions
+    = f.button :submit

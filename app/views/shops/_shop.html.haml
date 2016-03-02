@@ -1,0 +1,6 @@
+%li
+  .project
+    %span.color-dot{:style => "background-color:#{shop.name.pastel_color};"}
+    %span= shop.name
+    %span
+      (#{link_to t("actions.edit"), edit_shop_path(shop)})

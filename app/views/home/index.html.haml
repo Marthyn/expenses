@@ -1,0 +1,69 @@
+.outer
+  .container
+    %h1 Welcome to expenses
+    = render "expenses/form"
+
+  .container
+    %h1 Last 10 expenses
+    %table
+      %thead
+        %tr
+          %th Amount
+          %th Description
+          %th Shop
+          %th Category
+          %th Date
+      %tbody
+        - @expenses.each do |expense|
+          %tr
+            %td= "€ #{expense.amount}"
+            %td= link_to truncate(expense.description, length: 30), expense_path(expense)
+            %td= expense.shop.name
+            %td= expense.category.name
+            %td= expense.date.strftime("%Y/%m/%d")
+
+  .container
+    %h1= "Stats for #{Date.today.strftime("%B")}"
+
+    .totals-overview
+      %ol.totals
+        - ["Total Spent", "Allowed per day", "Spent per day", "Left per day", "Budget left"].each do |total|
+          %li
+            .category
+              %span.color
+              %span.activity= total
+            .spent
+              .spent-info
+                %span.amount{style: "color: #{total.pastel_color}"}
+                  = ExpenseStats.new(@timerange).send(total.underscore.gsub(" ", "_"))
+
+    %hr
+    .totals-overview
+      %ol.totals
+        - Category.all.each do |category|
+          %li
+            .category
+              %span.color
+              %span.activity= category.name
+            .spent
+              %canvas.spent-chart{"data-color" => category.name.pastel_color, "data-spent" => ExpenseStats.new(@timerange, category).percentage_for_entity, :height => "100", :width => "100"}
+              .spent-info
+                %span.amount{style: "color: #{category.name.pastel_color}"}
+                  = ExpenseStats.new(@timerange, category).amount_for_entity_timerange
+                %span.percent
+                  = "#{ExpenseStats.new(@timerange, category).percentage_for_entity} %"
+    %hr
+    .totals-overview
+      %ol.totals
+        - Shop.all.each do |shop|
+          %li
+            .shop
+              %span.color
+              %span.activity= shop.name
+            .spent
+              %canvas.spent-chart{"data-color" => shop.name.pastel_color, "data-spent" => ExpenseStats.new(@timerange, shop).percentage_for_entity, :height => "100", :width => "100"}
+              .spent-info
+                %span.amount{style: "color: #{shop.name.pastel_color}"}
+                  = ExpenseStats.new(@timerange, shop).amount_for_entity_timerange
+                %span.percent
+                  = "#{ExpenseStats.new(@timerange, shop).percentage_for_entity} %"

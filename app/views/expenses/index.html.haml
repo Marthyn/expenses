@@ -1,0 +1,23 @@
+.outer
+  .container
+    %h1 Listing Expenses
+    %table
+      %thead
+        %tr
+          %th Amount
+          %th Description
+          %th Shop
+          %th Category
+          %th{colspan:3} Actions
+      %tbody
+        - @expenses.each do |expense|
+          %tr
+            %td= "€ #{expense.amount}"
+            %td= link_to truncate(expense.description, length: 30), expense_path(expense)
+            %td= expense.shop.name
+            %td= expense.category.name
+            %td= link_to 'Show', expense
+            %td= link_to 'Edit', edit_expense_path(expense)
+            %td= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }
+    %br/
+    = link_to 'New Expense', new_expense_path
