@@ -25,7 +25,7 @@ class ExpensesController < ApplicationController
     if @expense.save
       redirect_to root_path, notice: 'Expense was successfully created.'
     else
-      render :new
+      redirect_to root_path, notice: 'There were some errors, make sure all the fields are set!'
     end
   end
 
