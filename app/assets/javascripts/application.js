@@ -16,7 +16,14 @@
 //= require jquery_ujs
 //= require_tree .
 //= require select2
+//= require pikaday
 
 $(document).ready(function () {
     $('select').select2();
+});
+
+$('#expense_date').each(function () {
+  new Pikaday({
+    field: this
+  });
 });

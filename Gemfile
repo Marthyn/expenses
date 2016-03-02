@@ -27,6 +27,8 @@ gem "haml"
 gem "erb2haml"
 gem "gravatar_image_tag"
 gem "select2-rails"
+gem 'rails_12factor'
+gem "pikaday-gem"
 
 source "https://rails-assets.org" do
   gem "rails-assets-chartjs"
