@@ -22,7 +22,6 @@ class ExpensesController < ApplicationController
   # POST /expenses
   def create
     @expense = Expense.new(expense_params)
-    @expense.date = Date.today
     if @expense.save
       redirect_to root_path, notice: 'Expense was successfully created.'
     else
@@ -53,6 +52,6 @@ class ExpensesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def expense_params
-      params.require(:expense).permit(:description, :amount, :shop_id, :category_id)
+      params.require(:expense).permit(:description, :amount, :shop_id, :category_id, :date, :user_id)
     end
 end
