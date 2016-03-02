@@ -11,10 +11,22 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Exo 2', sans-serif;
   line-height: 1.25em;
   margin: 0;
   text-rendering: optimizeLegibility;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.5em;
 }
 
 p {

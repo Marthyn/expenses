@@ -3,7 +3,7 @@ class Expense < ActiveRecord::Base
   belongs_to :user
   belongs_to :shop
 
-  def expenses_for_timeframe(range)
-
-  end
+  validates :category, presence: true
+  validates :user, presence: true
+  validates :shop, presence: true
 end

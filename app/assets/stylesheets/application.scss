@@ -31,3 +31,14 @@
 }
 
 select { width: 100%; height: 100px;}
+
+.input {
+  background-color: $base-background-color;
+  margin: 10px 0;
+
+  input {
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    resize: none;
+  }
+}

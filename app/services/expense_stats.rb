@@ -32,27 +32,27 @@ class ExpenseStats
     @expenses_for_entity ||= @entity.expenses.where(date: @timerange)
   end
 
+  def budget
+    Float(@timerange.count / 30).round * BUDGET
+  end
+
   def expenses
     @expenses ||= Expense.where(date: @timerange)
   end
 
-  def allowed_per_day
-    @allowed_per_day ||= Float(BUDGET / @timerange.count).round(2)
-  end
-
   def total_spent
-    @total_spent ||= Float(BUDGET - budget_left).round(2)
+    @total_spent ||= Float(budget - total_left).round(2)
   end
 
-  def spent_per_day
+  def per_day_spent
     @spent_per_day ||= Float(amount_for_timerange / ((Date.today - @timerange.first) +1)).round(2)
   end
 
-  def left_per_day
-    @left_per_day ||= Float(budget_left / (@timerange.last - Date.today)).round(2)
+  def per_day_left
+    @left_per_day ||= Float(total_left / (@timerange.last - Date.today)).round(2)
   end
 
-  def budget_left
-    Float(BUDGET - amount_for_timerange).round(2)
+  def total_left
+    Float(budget - amount_for_timerange).round(2)
   end
 end

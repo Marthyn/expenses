@@ -28,6 +28,10 @@ gem "erb2haml"
 gem "gravatar_image_tag"
 gem "select2-rails"
 
+source "https://rails-assets.org" do
+  gem "rails-assets-chartjs"
+end
+
 group :development do
   gem "quiet_assets"
   gem "refills"

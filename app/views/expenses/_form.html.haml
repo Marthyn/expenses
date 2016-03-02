@@ -1,9 +1,11 @@
 = simple_form_for(@expense) do |f|
   .form-inputs
-    = f.input :amount
-    = f.input :description, as: :text
-    = f.input :category_id, collection: Category.all, include_blank: "None"
-    = f.input :shop_id, collection: Shop.all, include_blank: "None"
+    = f.input :amount, label: false, placeholder: "How much?"
+    = f.input :description, label: false, placeholder: "What did you buy?", as: :string
+    = f.input :date, label: false, as: :string, placeholder: "When?"
+    = f.input :category_id, label: false, collection: Category.all, include_blank: "What category of expense?"
+    = f.input :shop_id, label: false, collection: Shop.all, include_blank: "In what shop?"
+    = f.input :user_id, input_html: { value: current_user.id }, as: :hidden
   %hr
   .form-actions
     = f.button :submit

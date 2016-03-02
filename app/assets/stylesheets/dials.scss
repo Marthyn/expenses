@@ -24,7 +24,7 @@
 
     .amount {
       display: block;
-      font-size: 2em;
+      font-size: 1.7em;
       color: #333 !important;
       letter-spacing: -2px;
     }
@@ -42,12 +42,17 @@
   text-align: center;
 
   li {
-    display: table-cell;
-    width: 1%;
-    border-bottom: none;
-    text-align: center;
-    padding: 11px 5px;
-    white-space: nowrap;
+    display: inline-block;
+    padding-right: 5px;
+
+    @include media($medium-screen-up) {
+      display: table-cell;
+      width: 1%;
+      border-bottom: none;
+      text-align: center;
+      padding: 11px 5px;
+      white-space: nowrap;
+    }
   }
 
   .total {

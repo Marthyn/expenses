@@ -4,6 +4,18 @@ App to track your monthly expenses like groceries, alcohol and funtivities!
 
 This was based on [Hours](https://github.com/defactosoftware/hours)
 
+## Roadmap
+
+- Change month for stats
+- Daily/Yearly/Monthly bargraph
+- Set budget
+- i18n
+- Multitenancy
+- Daily/Weekly digest mail
+- Daily reminder
+- API
+- Export to Excel
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
