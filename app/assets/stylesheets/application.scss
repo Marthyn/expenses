@@ -43,3 +43,22 @@ select { width: 100%; height: 100px;}
     resize: none;
   }
 }
+
+.tag-line {
+  input, span, div, form {
+    width: 20% !important;
+    display: inline !important;
+  }
+
+  select {
+    width: 110px;
+    height: 34px;
+    font-size: 1.5em;
+    overflow: hidden;
+    display: inline;
+    font-weight: 400;
+
+  }
+
+
+}

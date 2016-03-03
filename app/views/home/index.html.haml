@@ -4,7 +4,13 @@
     = render "expenses/form"
   - if @expenses.any?
     .container
-      %h4{style: "text-align: center;"}= "In #{@timerange.first.strftime("%B %Y")} you spent"
+      %h4.tag-line{style: "text-align: center;"}
+        %span In
+        = simple_form_for(:date_filters, method: :get, id: "date_filters") do |f|
+          = f.input :month, collection: @month_hash, selected: @selected_month, label: false, include_blank: false, input_html: { onchange: "this.form.submit()" }
+          = f.input :year, collection: @year_hash, selected: @selected_year, label: false, include_blank: false, input_html: { onchange: "this.form.submit()" }
+        %span you spent
+
       .totals-overview
         %ol.totals
           - ["Per day", "Total"].each do |total|
@@ -83,4 +89,8 @@
               %td= expense.date.strftime("%Y/%m/%d")
   - else
     .container
-      %h1{style: "text-align: center;"}= "You spent nothing in #{@timerange.first.strftime("%B %Y")}"
+      %h4.tag-line{style: "text-align: center;"}
+        %span You spent nothing in
+        = simple_form_for(:date_filters, method: :get, id: "date_filters") do |f|
+          = f.input :month, collection: @month_hash, selected: @selected_month, label: false, include_blank: false, input_html: { onchange: "this.form.submit()" }
+          = f.input :year, collection: @year_hash, selected: @selected_year, label: false, include_blank: false, input_html: { onchange: "this.form.submit()" }
