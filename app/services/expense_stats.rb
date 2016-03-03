@@ -45,7 +45,12 @@ class ExpenseStats
   end
 
   def per_day_spent
-    @spent_per_day ||= Float(amount_for_timerange / ((Date.today - @timerange.first) +1)).round(2)
+    if @timerange.first > Date.today || @timerange.last < Date.today
+      date_first = @timerange.last
+    else
+      date_first = Date.today
+    end
+    @spent_per_day ||= Float(amount_for_timerange / ((date_first - @timerange.first) +1)).round(2)
   end
 
   def per_day_left

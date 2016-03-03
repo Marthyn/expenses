@@ -15,6 +15,7 @@ This was based on [Hours](https://github.com/defactosoftware/hours)
 - Daily reminder
 - API
 - Export to Excel
+- Most used categories and shops on top
 
 ## Getting Started
 
