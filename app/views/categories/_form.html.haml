@@ -1,6 +1,7 @@
 = simple_form_for(@category) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :name
+    = f.input :name, label: false, placeholder: "Name"
+    = f.input :monthly_budget, label: "Budget per month (optional)"
   .form-actions
     = f.button :submit

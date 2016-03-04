@@ -40,6 +40,14 @@ class ExpenseStats
     @expenses ||= Expense.where(date: @timerange)
   end
 
+  def entity_over_budget?
+    amount_for_entity_timerange > @entity.monthly_budget
+  end
+
+  def over_budget?
+    amount_for_timerange > budget
+  end
+
   def total_spent
     @total_spent ||= Float(budget - total_left).round(2)
   end

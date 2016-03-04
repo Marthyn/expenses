@@ -2,5 +2,6 @@
   .project
     %span.color-dot{:style => "background-color:#{shop.name.pastel_color};"}
     %span= shop.name
+    %span= "(#{shop.monthly_budget})" if shop.monthly_budget
     %span
       (#{link_to t("actions.edit"), edit_shop_path(shop)})

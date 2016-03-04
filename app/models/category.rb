@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :expenses, counter_cache: true
+  has_many :expenses
 
   scope :with_expenses, -> (timerange) {
     joins(:expenses).
