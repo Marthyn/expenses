@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :expenses
   resources :shops, except: [:show]
   root "home#index"
+  resource :accounts, only: [:new, :create]
 end

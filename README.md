@@ -6,7 +6,6 @@ This was based on [Hours](https://github.com/defactosoftware/hours)
 
 ## Roadmap
 
-- Change month for stats
 - Daily/Yearly/Monthly bargraph
 - Set budget
 - i18n
