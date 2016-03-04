@@ -11,5 +11,5 @@
         %p= t("report.filters")
       = render @time_series.chart, time_series: @time_series
     .charts
-      = render "/charts/pie_chart", title: "Expenses per category", data: ExpenseStats.new(current_user, @time_series.range_for_entries).expenses_for_entity_colection(Shop.with_expenses(@time_series.range_for_entries)).to_json
-      = render "/charts/pie_chart", title: "Expenses per shop", data: ExpenseStats.new(current_user, @time_series.range_for_entries).expenses_for_entity_colection(Category.with_expenses(@time_series.range_for_entries)).to_json
+      = render "/charts/pie_chart", title: "Expenses per Shop", data: ExpenseStats.new(current_user, @time_series.range_for_entries).expenses_for_entity_colection(Shop.with_expenses(@time_series.range_for_entries)).to_json
+      = render "/charts/pie_chart", title: "Expenses per Category", data: ExpenseStats.new(current_user, @time_series.range_for_entries).expenses_for_entity_colection(Category.with_expenses(@time_series.range_for_entries)).to_json
