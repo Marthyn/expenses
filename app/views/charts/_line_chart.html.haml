@@ -1,0 +1,3 @@
+.expenses-per-week
+  %p= t("charts.expenses_per_week")
+  %canvas#line-chart{"data-data" => time_series.serialize.to_json}

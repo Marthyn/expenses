@@ -43,18 +43,18 @@ PIE_CHART_CONFIG = {
 #   data = $(chart).data("data")
 #   new Chart($(chart).get(0).getContext("2d")).Pie(data, PIE_CHART_CONFIG)
 #
-# if $('#bar-chart').length > 0
-#   $canvas = $('#bar-chart');
-#   data = $canvas.data('data');
-#   context = $canvas[0].getContext('2d');
-#   new Chart(context).Bar(data, BAR_CHART_CONFIG)
-#
-# if $('#line-chart').length > 0
-#   $canvas = $('#line-chart');
-#   data = $canvas.data('data');
-#
-#   context = $canvas[0].getContext('2d');
-#   new Chart(context).Line(data, LINE_CHART_CONFIG)
+if $('#bar-chart').length > 0
+  $canvas = $('#bar-chart');
+  data = $canvas.data('data');
+  context = $canvas[0].getContext('2d');
+  new Chart(context).Bar(data, BAR_CHART_CONFIG)
+
+if $('#line-chart').length > 0
+  $canvas = $('#line-chart');
+  data = $canvas.data('data');
+
+  context = $canvas[0].getContext('2d');
+  new Chart(context).Line(data, LINE_CHART_CONFIG)
 
 # Category spent charts
 $('.spent-chart').each (i, el) ->

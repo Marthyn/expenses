@@ -24,37 +24,9 @@
                     = "€ #{ExpenseStats.new(current_user, @timerange).send("#{total.underscore.gsub(" ", "_")}_spent")}"
 
       %hr
-      .totals-overview
-        %h4{style: "text-align: center;"}= "On the following stuff"
-        %ol.totals
-          - Category.with_expenses(@timerange).each do |category|
-            %li
-              .category
-                %span.color
-                %span.activity= category.name
-              .spent
-                %canvas.spent-chart{"data-color" => category.name.pastel_color, "data-spent" => ExpenseStats.new(current_user, @timerange, category).percentage_for_entity, :height => "100", :width => "100"}
-                .spent-info
-                  %span.amount{style: "color: #{category.name.pastel_color}"}
-                    = "€ #{ExpenseStats.new(current_user, @timerange, category).amount_for_entity_timerange}"
-                  %span.percent
-                    = "#{ExpenseStats.new(current_user, @timerange, category).percentage_for_entity} %"
+      =render "categories/dials"
       %hr
-      .totals-overview
-        %h4{style: "text-align: center;"}= "In these shops"
-        %ol.totals
-          - Shop.with_expenses(@timerange).each do |shop|
-            %li
-              .shop
-                %span.color
-                %span.activity= shop.name
-              .spent
-                %canvas.spent-chart{"data-color" => shop.name.pastel_color, "data-spent" => ExpenseStats.new(current_user, @timerange, shop).percentage_for_entity, :height => "100", :width => "100"}
-                .spent-info
-                  %span.amount{style: "color: #{shop.name.pastel_color}"}
-                    = "€ #{ExpenseStats.new(current_user, @timerange, shop).amount_for_entity_timerange}"
-                  %span.percent
-                    = "#{ExpenseStats.new(current_user, @timerange, shop).percentage_for_entity} %"
+      =render "shops/dials"
       - unless @timerange.first > Date.today || @timerange.last < Date.today
         %hr
         %h4{style: "text-align: center;"}= "So you're left with"

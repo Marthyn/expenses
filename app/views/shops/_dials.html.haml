@@ -1,0 +1,5 @@
+.totals-overview
+  %h4{style: "text-align: center;"}= "In these shops"
+  %ol.totals
+    - Shop.with_expenses(@timerange).each do |shop|
+      =render "dial", entity: shop

@@ -16,12 +16,22 @@ en:
   actions:
     edit: Edit
 
+  charts:
+    expenses_per_day: Expenses per day
+    expenses_per_week: Expenses per week
+
   date:
     formats:
       default:
         "%m/%d/%Y"
       with_weekday:
         "%a %m/%d/%y"
+
+  report:
+    weekly: Last week
+    monthly: Last month
+    yearly: Last year
+    filters: Filters
 
   time:
     formats:

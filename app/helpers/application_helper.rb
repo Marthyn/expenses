@@ -7,4 +7,10 @@ module ApplicationHelper
      link_to(link_text, link_path, http_method)
    end
  end
+
+ def link_to_time_span(span)
+   params_time_span = params.fetch(:time_span) { "monthly" }
+   link_params = params_time_span == span ? { class: "active" } : {}
+   link_to t("report.#{span}"), url_for(time_span: span), link_params
+ end
 end

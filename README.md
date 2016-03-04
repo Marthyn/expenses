@@ -20,7 +20,6 @@ This was based on [Hours](https://github.com/defactosoftware/hours)
   - Compliment if you're under budget
 - API
 - Export to Excel
-- Sorting expenses list
 
 ## Getting Started
 

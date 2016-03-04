@@ -1,0 +1,11 @@
+%li
+  .category
+    %span.color
+    %span.activity= entity.name
+  .spent
+    %canvas.spent-chart{"data-color" => entity.name.pastel_color, "data-spent" => ExpenseStats.new(current_user, @timerange, entity).percentage_for_entity, :height => "100", :width => "100"}
+    .spent-info
+      %span.amount{style: "color: #{entity.name.pastel_color}"}
+        = "€ #{ExpenseStats.new(current_user, @timerange, entity).amount_for_entity_timerange}"
+      %span.percent
+        = "#{ExpenseStats.new(current_user, @timerange, entity).percentage_for_entity} %"

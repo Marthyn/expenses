@@ -1,0 +1,5 @@
+.totals-overview
+  %h4{style: "text-align: center;"}= "On the following stuff"
+  %ol.totals
+    - Category.with_expenses(@timerange).each do |category|
+      =render "dial", entity: category
