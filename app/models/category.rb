@@ -11,4 +11,8 @@ class Category < ActiveRecord::Base
   }
 
   scope :by_usage, -> { order('expenses_count DESC') }
+
+  def increment_expenses_count
+    increment!(:expenses_count)
+  end
 end

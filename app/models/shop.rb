@@ -1,5 +1,5 @@
 class Shop < ActiveRecord::Base
-  has_many :expenses, counter_cache: true
+  has_many :expenses
 
   scope :with_expenses, -> (timerange) {
     joins(:expenses).
@@ -11,4 +11,8 @@ class Shop < ActiveRecord::Base
   }
 
   scope :by_usage, -> { order('expenses_count DESC') }
+
+  def increment_expenses_count
+    increment!(:expenses_count)
+  end
 end

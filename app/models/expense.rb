@@ -10,7 +10,7 @@ class Expense < ActiveRecord::Base
   validates :shop, presence: true
 
   def update_counters
-    category.expenses_counter.increment!
-    shop.expenses_counter.increment!
+    category.increment_expenses_count
+    shop.increment_expenses_count
   end
 end
