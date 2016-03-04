@@ -32,6 +32,7 @@ gem "pikaday-gem"
 gem 'apartment'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'jquery-datatables-rails'
 
 source "https://rails-assets.org" do
   gem "rails-assets-chartjs"

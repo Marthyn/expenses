@@ -8,11 +8,18 @@ This was based on [Hours](https://github.com/defactosoftware/hours)
 
 - Daily/Yearly/Monthly bargraph
 - i18n
-- Daily/Weekly digest mail
+- Weekly digest mail
+  - warn about getting close to budget limit
+  - update on what your biggest expense was
+  - most used category/shop
+  - Compliment if you're under budget
 - Daily reminder
+  - Remind to log expenses
+  - Warning if over budget or close to going over budget
+  - Warning if last days expenses were majorly over budget
+  - Compliment if you're under budget
 - API
 - Export to Excel
-- Budget per category
 - Sorting expenses list
 
 ## Getting Started

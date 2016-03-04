@@ -14,6 +14,7 @@
 //= require chartjs
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
 //= require_tree .
 //= require select2
 //= require pikaday
@@ -26,4 +27,12 @@ $('#expense_date').each(function () {
   new Pikaday({
     field: this
   });
+});
+
+$(document).ready(function(){
+    $('table').DataTable({
+      paging: false,
+      info: false,
+      processing: true
+    });
 });
