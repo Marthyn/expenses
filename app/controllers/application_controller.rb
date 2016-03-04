@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  helper_method :current_user_owner?
+  helper_method :current_user_owner?, :current_account
 
   before_action :load_schema
 

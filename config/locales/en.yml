@@ -7,6 +7,8 @@ en:
     repeat_password: Password confirmation
     name: Account name
     create: Create my account!
+    update: Update my account
+    monthly_budget: Monthly budget
 
   loader:
     saving: Saving...
@@ -32,14 +34,14 @@ en:
 
   titles:
     application: Expenses
-
-  titles:
     home:
-      index: Home
+      index: Expenses
     categories:
       index: Categories
     shops:
       index: Shops
+    accounts:
+      edit: Edit my account
 
   category:
     edit: Edit

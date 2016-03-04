@@ -1,7 +1,7 @@
 class ExpenseStats
-  BUDGET = 400
-
-  def initialize(timerange, entity = nil)
+  def initialize(current_user, timerange, entity = nil)
+    @current_user = current_user
+    @budget = current_user.organization.monthly_budget
     @entity = entity
     @timerange = timerange
   end
@@ -33,7 +33,7 @@ class ExpenseStats
   end
 
   def budget
-    Float(@timerange.count / 30).round * BUDGET
+    Float(@timerange.count / 30).round * @budget
   end
 
   def expenses

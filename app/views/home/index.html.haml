@@ -21,7 +21,7 @@
               .spent
                 .spent-info
                   %span.amount{style: "color: #{total.pastel_color}"}
-                    = "€ #{ExpenseStats.new(@timerange).send("#{total.underscore.gsub(" ", "_")}_spent")}"
+                    = "€ #{ExpenseStats.new(current_user, @timerange).send("#{total.underscore.gsub(" ", "_")}_spent")}"
 
       %hr
       .totals-overview
@@ -33,12 +33,12 @@
                 %span.color
                 %span.activity= category.name
               .spent
-                %canvas.spent-chart{"data-color" => category.name.pastel_color, "data-spent" => ExpenseStats.new(@timerange, category).percentage_for_entity, :height => "100", :width => "100"}
+                %canvas.spent-chart{"data-color" => category.name.pastel_color, "data-spent" => ExpenseStats.new(current_user, @timerange, category).percentage_for_entity, :height => "100", :width => "100"}
                 .spent-info
                   %span.amount{style: "color: #{category.name.pastel_color}"}
-                    = "€ #{ExpenseStats.new(@timerange, category).amount_for_entity_timerange}"
+                    = "€ #{ExpenseStats.new(current_user, @timerange, category).amount_for_entity_timerange}"
                   %span.percent
-                    = "#{ExpenseStats.new(@timerange, category).percentage_for_entity} %"
+                    = "#{ExpenseStats.new(current_user, @timerange, category).percentage_for_entity} %"
       %hr
       .totals-overview
         %h4{style: "text-align: center;"}= "In these shops"
@@ -49,12 +49,12 @@
                 %span.color
                 %span.activity= shop.name
               .spent
-                %canvas.spent-chart{"data-color" => shop.name.pastel_color, "data-spent" => ExpenseStats.new(@timerange, shop).percentage_for_entity, :height => "100", :width => "100"}
+                %canvas.spent-chart{"data-color" => shop.name.pastel_color, "data-spent" => ExpenseStats.new(current_user, @timerange, shop).percentage_for_entity, :height => "100", :width => "100"}
                 .spent-info
                   %span.amount{style: "color: #{shop.name.pastel_color}"}
-                    = "€ #{ExpenseStats.new(@timerange, shop).amount_for_entity_timerange}"
+                    = "€ #{ExpenseStats.new(current_user, @timerange, shop).amount_for_entity_timerange}"
                   %span.percent
-                    = "#{ExpenseStats.new(@timerange, shop).percentage_for_entity} %"
+                    = "#{ExpenseStats.new(current_user, @timerange, shop).percentage_for_entity} %"
       - unless @timerange.first > Date.today || @timerange.last < Date.today
         %hr
         %h4{style: "text-align: center;"}= "So you're left with"
@@ -68,7 +68,7 @@
                 .spent
                   .spent-info
                     %span.amount{style: "color: #{total.pastel_color}"}
-                      = "€ #{ExpenseStats.new(@timerange).send("#{total.underscore.gsub(" ", "_")}_left")}"
+                      = "€ #{ExpenseStats.new(current_user, @timerange).send("#{total.underscore.gsub(" ", "_")}_left")}"
     .container
       %h1= "Expenses of #{@timerange.first.strftime("%B %Y")}"
       %table

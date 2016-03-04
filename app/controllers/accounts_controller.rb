@@ -1,4 +1,3 @@
-
 class AccountsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create]
   before_action :authorize!, only: [:edit, :destroy]
@@ -20,7 +19,15 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    # @current_account = request.host
+    current_account
+  end
+
+  def update
+    if current_account.update(update_account_params)
+      redirect_to root_path, notice: "Account was updated"
+    else
+      redirect_to root_path, notice: "Account was not updated"
+    end
   end
 
   def destroy
@@ -34,6 +41,10 @@ class AccountsController < ApplicationController
     params.require(:signup)
           .permit(:account_name, :first_name, :last_name, :email,
                     :password, :password_confirmation)
+  end
+
+  def update_account_params
+    params.require(:account).permit(:monthly_budget)
   end
 
   def authorize!
