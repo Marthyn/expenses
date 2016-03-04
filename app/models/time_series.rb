@@ -30,11 +30,11 @@ class TimeSeries
     expenses.where(date: range_for_entries)
   end
 
-  private
-
   def range_for_entries
     ((@time_span.first + 1.day)..(@time_span.last + 1.day))
   end
+
+  private
 
   def labels
     @time_span.map { |date| date.strftime("%d/%m") }

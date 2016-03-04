@@ -39,10 +39,10 @@ PIE_CHART_CONFIG = {
 #   data = $("#hours-per-project").data("data")
 #   new Chart($("#hours-per-project").get(0).getContext("2d")).Doughnut(data, DOUGHNUT_CHART_CONFIG)
 #
-# $(".pie-chart").each (index, chart) =>
-#   data = $(chart).data("data")
-#   new Chart($(chart).get(0).getContext("2d")).Pie(data, PIE_CHART_CONFIG)
-#
+$(".pie-chart").each (index, chart) =>
+  data = $(chart).data("data")
+  new Chart($(chart).get(0).getContext("2d")).Pie(data, PIE_CHART_CONFIG)
+
 if $('#bar-chart').length > 0
   $canvas = $('#bar-chart');
   data = $canvas.data('data');

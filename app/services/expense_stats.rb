@@ -71,4 +71,16 @@ class ExpenseStats
   def total_left
     Float(budget - amount_for_timerange).round(2)
   end
+
+  def expenses_for_entity_colection(collection)
+    collection.map do |subject|
+      @subject = subject
+      {
+        value: subject.expenses.where(date: @timerange).sum(:amount),
+        color: subject.name.pastel_color,
+        label: subject.name,
+        highlight: "gray"
+      }
+    end
+  end
 end
