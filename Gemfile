@@ -29,6 +29,9 @@ gem "gravatar_image_tag"
 gem "select2-rails"
 gem 'rails_12factor'
 gem "pikaday-gem"
+gem 'apartment'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 source "https://rails-assets.org" do
   gem "rails-assets-chartjs"

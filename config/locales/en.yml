@@ -1,4 +1,18 @@
 en:
+  account:
+    first_name: First name
+    last_name: Last name
+    email: Email
+    password: Password
+    repeat_password: Password confirmation
+    name: Account name
+    create: Create my account!
+    update: Update my account
+    monthly_budget: Monthly budget
+
+  loader:
+    saving: Saving...
+
   actions:
     edit: Edit
 
@@ -20,14 +34,14 @@ en:
 
   titles:
     application: Expenses
-
-  titles:
     home:
-      index: Home
+      index: Expenses
     categories:
       index: Categories
     shops:
       index: Shops
+    accounts:
+      edit: Edit my account
 
   category:
     edit: Edit

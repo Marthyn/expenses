@@ -1,0 +1,9 @@
+.outer
+  .container
+    %h1 Edit my account
+    %title= title
+    = simple_form_for(current_account, url: accounts_path) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :monthly_budget, required: true, placeholder: t("account.monthly_budget")
+        = f.button :submit, t("account.update"), data: { disable_with: t("loader.saving") }
