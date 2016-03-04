@@ -7,9 +7,7 @@ This was based on [Hours](https://github.com/defactosoftware/hours)
 ## Roadmap
 
 - Daily/Yearly/Monthly bargraph
-- Set budget
 - i18n
-- Multitenancy
 - Daily/Weekly digest mail
 - Daily reminder
 - API
