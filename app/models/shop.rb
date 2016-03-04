@@ -9,4 +9,11 @@ class Shop < ActiveRecord::Base
     having('count(expenses.id) > 0').
     order('sum(expenses.amount) DESC')
   }
+
+  scope :by_usage, -> {
+    joins(:expenses).
+    select("shops.id, shops.name").
+    group("shops.id").
+    order('count(expenses) DESC')
+  }
 end

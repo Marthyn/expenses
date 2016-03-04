@@ -14,6 +14,7 @@ This was based on [Hours](https://github.com/defactosoftware/hours)
 - Export to Excel
 - Most used categories and shops on top
 - Budget per category
+- Sorting expenses list
 
 ## Getting Started
 

@@ -10,7 +10,10 @@ class Category < ActiveRecord::Base
     order('sum(expenses.amount) DESC')
   }
 
-  def expenses_for_timeframe(range)
-
-  end
+  scope :by_usage, -> {
+    joins(:expenses).
+    select("categories.id, categories.name").
+    group("categories.id").
+    order('count(expenses) DESC')
+  }
 end
