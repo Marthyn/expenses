@@ -1,3 +1,8 @@
+PATH
+  remote: ../hashtel
+  specs:
+    hashtel (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -129,7 +134,6 @@ GEM
     haml (4.0.7)
       tilt
     hashdiff (0.3.0)
-    hashtel (0.0.2)
     high_voltage (2.4.0)
     highline (1.7.8)
     html2haml (2.0.0)
@@ -340,7 +344,7 @@ DEPENDENCIES
   formulaic
   gravatar_image_tag
   haml
-  hashtel
+  hashtel!
   high_voltage
   i18n-tasks
   jquery-datatables-rails

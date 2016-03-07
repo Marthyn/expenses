@@ -4,9 +4,12 @@ App to track your monthly expenses like groceries, alcohol and funtivities!
 
 This was based on [Hours](https://github.com/defactosoftware/hours)
 
+![Graph](http://i.imgur.com/bbKBMsz.png)
+![Statistics](http://i.imgur.com/KODlKXF.png)
+![Form](http://i.imgur.com/XDJQuc8.png)
+
 ## Roadmap
 
-- Daily/Yearly/Monthly bargraph
 - i18n
 - Weekly digest mail
   - warn about getting close to budget limit
