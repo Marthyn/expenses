@@ -41,7 +41,7 @@ your machine with [this script].
 
 After setting up, you can run the application like this:
 
-    % rails s
+    % foreman start
 
 ## Guidelines
 
