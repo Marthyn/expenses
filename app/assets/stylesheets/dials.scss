@@ -46,8 +46,6 @@
     padding-right: 5px;
 
     @include media($medium-screen-up) {
-      display: table-cell;
-      width: 1%;
       border-bottom: none;
       text-align: center;
       padding: 11px 5px;
