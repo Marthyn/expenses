@@ -33,6 +33,7 @@ gem 'apartment'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'jquery-datatables-rails'
+gem 'rails_email_preview', '~> 0.2.29'
 
 source "https://rails-assets.org" do
   gem "rails-assets-chartjs"

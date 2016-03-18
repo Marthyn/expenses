@@ -1,0 +1,80 @@
+<html>
+  <style>
+    .outer {
+      max-width: 68em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container {
+      height: 100%;
+      margin: 0;
+      padding: 1em;
+      font-family: "Exo 2", sans-serif;
+      line-height: 1.7em;
+      background: #f7f6f0;
+      color: #333333;
+    }
+
+    .totals-overview {
+      clear: both;
+    }
+
+    .totals {
+      margin-bottom: 5px;
+      text-align: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      -webkit-padding-start: 40px;
+    }
+
+    .category {
+      display: block;
+    }
+
+    .spent {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 10px auto 0;
+      font-size: 1em;
+      font-weight: 100;
+      color: #999;
+      text-align: center;
+    }
+
+    .spent-info {
+      position: relative;
+      top: 24px;
+    }
+
+    .amount {
+      display: block;
+      font-size: 1.7em;
+      color: #333 !important;
+      letter-spacing: -2px;
+    }
+
+    li {
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: "Exo 2", sans-serif;
+      line-height: 1.7em;
+      background: #f7f6f0;
+      color: #333333;
+    }
+  </style>
+  <body>
+    <%= yield %>
+  </body>
+</html>

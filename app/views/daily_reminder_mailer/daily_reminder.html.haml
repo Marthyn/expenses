@@ -1,0 +1,29 @@
+.outer
+  .container
+    %h1 A Daily reminder from Expenses
+    %p Don't forget to log your expenses of the day in your expenses environment
+    %a{href: "expensesapp.herokuapp.com" }= "Click here to add your expenses"
+    %hr
+    .totals-overview
+      %h3 Stats
+      %ol.totals
+        %li
+          .category Total spent this month
+          .spent
+            .spent-info
+              .amount 230
+        %li
+          .category="Spent the most on Clothing"
+          .spent
+            .spent-info
+              .amount 230
+        %li
+          .category="Spent the most in MCD"
+          .spent
+            .spent-info
+              .amount 21
+        %li
+          .category="Budget left on Clothing"
+          .spent
+            .spent-info
+              .amount -20

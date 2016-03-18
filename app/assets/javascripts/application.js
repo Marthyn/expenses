@@ -30,9 +30,9 @@ $('#expense_date').each(function () {
 });
 
 $(document).ready(function(){
-    $('table').DataTable({
-      paging: false,
-      info: false,
-      processing: true
-    });
+  $('table').DataTable({
+    paging: false,
+    info: false,
+    processing: true
+  });
 });

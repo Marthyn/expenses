@@ -8,7 +8,8 @@ class Signup
     :password_confirmation,
     :account_name,
     :user,
-    :account
+    :account,
+    :monthly_budget
 
   validate :validate_children
 
@@ -35,7 +36,7 @@ class Signup
                      email: email,
                      password: password,
                      password_confirmation: password_confirmation)
-    @account = Account.new(name: account_name, owner: @user)
+    @account = Account.new(name: account_name, owner: @user, monthly_budget: monthly_budget)
   end
 
   def validate_children
