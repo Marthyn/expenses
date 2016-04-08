@@ -26,6 +26,9 @@ This was based on [Hours](https://github.com/defactosoftware/hours)
 - List of user's expenses
 - Pagination
 
+DB schema
+
+http://dbpatterns.com/documents/57075b5a1514b4252236dc06/
 
 ## Getting Started
 
