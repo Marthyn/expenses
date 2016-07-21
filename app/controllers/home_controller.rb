@@ -2,12 +2,12 @@ class HomeController < ApplicationController
   before_filter :set_hashes_for_select
 
   def index
-    @expense = Expense.new
+    @expense = Expense.new(date: Date.today, shop: Shop.by_usage.first, category: Category.by_usage.first)
     timerange_initializer = TimerangeInitializer.new(params)
     @timerange = timerange_initializer.timerange
     @selected_year = timerange_initializer.year
     @selected_month = timerange_initializer.month
-    @expenses = Expense.where(date: @timerange).order("date DESC").includes(:category, :shop)
+    @expenses = Expense.where(date: @timerange).order("date DESC").includes(:category, :shop).order(created_at: :desc)
   end
 
   def set_hashes_for_select
@@ -17,7 +17,6 @@ class HomeController < ApplicationController
         @month_hash << [name, index]
       end
     end
-    puts @month_hash.inspect
     @year_hash = [2015, 2016, 2017]
   end
 end

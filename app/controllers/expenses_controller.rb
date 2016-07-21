@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   def index
-    @expenses = Expense.all
+    @expenses = Expense.all.order(created_at: :desc)
   end
 
   # GET /expenses/1
