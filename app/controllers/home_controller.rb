@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     @timerange = timerange_initializer.timerange
     @selected_year = timerange_initializer.year
     @selected_month = timerange_initializer.month
-    @expenses = Expense.where(date: @timerange).order("date DESC").includes(:category, :shop).order(created_at: :desc)
+    @expenses = Expense.where(date: @timerange).includes(:category, :shop).order(created_at: :desc)
   end
 
   def set_hashes_for_select
