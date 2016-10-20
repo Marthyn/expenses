@@ -3,13 +3,16 @@
 
   .spent {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: 10px auto 0;
     font-size: 1em;
     font-weight: 100;
     color: #999;
     text-align: center;
+    .spent-info {
+      top: 40px;
+    }
   }
 
   .spent-chart {

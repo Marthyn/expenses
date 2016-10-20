@@ -34,14 +34,9 @@ PIE_CHART_CONFIG = {
   animationEasing: 'easeOutQuart'
 }
 
-# # Hours per project diagram
-# if $("#hours-per-project").length > 0
-#   data = $("#hours-per-project").data("data")
-#   new Chart($("#hours-per-project").get(0).getContext("2d")).Doughnut(data, DOUGHNUT_CHART_CONFIG)
-#
 $(".pie-chart").each (index, chart) =>
   data = $(chart).data("data")
-  new Chart($(chart).get(0).getContext("2d")).Pie(data, PIE_CHART_CONFIG)
+  new Chart($(chart).get(0).getContext("2d"), { data: data, options: PIE_CHART_CONFIG, type: 'pie' })
 
 if $('#bar-chart').length > 0
   $canvas = $('#bar-chart');
@@ -62,15 +57,24 @@ $('.spent-chart').each (i, el) ->
   spent = $el.data('spent')
   color = $(el).data('color')
   setTimeout (->
-    new Chart(el.getContext('2d')).Doughnut(
-      [
-        { value: spent, color: color },
-        { value: 100-spent, color: '#E2EAE9' }
-      ],
-      {
-        percentageInnerCutout: 80,
-        showTooltips: false,
-        animationSteps: 50,
-        animationEasing: 'easeOutQuart'
+    new Chart(el.getContext('2d'), {
+        data: {
+          labels: [],
+          datasets: [
+            {
+              data: [spent, 100-spent],
+              backgroundColor: [color, '#E2EAE9']
+            }
+          ]
+        },
+        options: {
+          cutoutPercentage: 80,
+          tooltips: {
+            enabled: false
+          },
+          animationSteps: 50,
+          animationEasing: 'easeOutQuart'
+        },
+        type: 'doughnut'
       })
-    ), 200 * i
+    ), 50 * i
