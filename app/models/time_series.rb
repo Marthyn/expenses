@@ -11,6 +11,11 @@ class TimeSeries
     YearlyTimeSeries.new(resource)
   end
 
+  def self.all_time(resource)
+    AllTimeTimeSeries.new(resource)
+  end
+
+
   def serialize
     {
       labels: labels,

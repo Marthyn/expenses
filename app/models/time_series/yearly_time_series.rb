@@ -8,6 +8,10 @@ class TimeSeries::YearlyTimeSeries < TimeSeries
     "/charts/line_chart"
   end
 
+  def title
+    t("charts.expenses_per_week")
+  end
+
   private
 
   def data
