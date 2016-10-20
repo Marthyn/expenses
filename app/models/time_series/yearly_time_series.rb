@@ -9,7 +9,7 @@ class TimeSeries::YearlyTimeSeries < TimeSeries
   end
 
   def title
-    t("charts.expenses_per_week")
+    I18n.t("charts.expenses_per_week")
   end
 
   private
@@ -20,6 +20,10 @@ class TimeSeries::YearlyTimeSeries < TimeSeries
 
   def labels
     @time_span.step(7).map { |date| date.strftime("%V") }
+  end
+
+  def colors
+    @time_span.step(7).map { |date| date.strftime("%V").pastel_color }
   end
 
   def expenses_per_week(week)

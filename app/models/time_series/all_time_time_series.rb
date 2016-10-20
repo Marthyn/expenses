@@ -5,7 +5,7 @@ class TimeSeries::AllTimeTimeSeries < TimeSeries
   end
 
   def divider
-    time_span.count / 25
+    time_span.count / 200
   end
 
   def time_span
@@ -28,6 +28,10 @@ class TimeSeries::AllTimeTimeSeries < TimeSeries
 
   def labels
     @time_span.step(divider).map { |date| "#{(date - divider.days).strftime} - #{date.strftime}" }
+  end
+
+  def colors
+    @time_span.step(divider).map { |date| "#{(date - divider.days).strftime} - #{date.strftime}".pastel_color }
   end
 
   def expenses_per_week(week)

@@ -22,7 +22,8 @@ class TimeSeries
       datasets: [
         {
           label: "Expenses",
-          data: data
+          data: data,
+          backgroundColor: colors
         }
       ]
     }
@@ -48,6 +49,10 @@ class TimeSeries
 
   def data
     @time_span.map { |date| expenses_per_day[date] || 0 }
+  end
+
+  def colors
+    @time_span.map { |date| date.strftime("%d/%m").pastel_color }
   end
 
   def expenses_per_day
