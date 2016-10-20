@@ -71,6 +71,27 @@ class ExpenseStats
     Float(budget - amount_for_timerange).round(2)
   end
 
+  def serialized_expenses_for_entity_colection(collection)
+    {
+      labels: collection.map { |s| s.name },
+      datasets: [
+        backgroundColor: colors_for_entity_collection(collection),
+        data: values_for_entity_collection(collection),
+      ]
+    }
+  end
+
+  def colors_for_entity_collection(collection)
+    collection.map { |s| s.name.pastel_color }
+  end
+
+  def values_for_entity_collection(collection)
+    collection.map do |subject|
+      @subject = subject
+      subject.expenses.where(date: @timerange).sum(:amount)
+    end
+  end
+
   def expenses_for_entity_colection(collection)
     collection.map do |subject|
       @subject = subject
@@ -78,7 +99,7 @@ class ExpenseStats
         value: subject.expenses.where(date: @timerange).sum(:amount),
         color: subject.name.pastel_color,
         label: subject.name,
-        highlight: "gray"
+
       }
     end
   end

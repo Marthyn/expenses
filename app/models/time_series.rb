@@ -16,6 +16,7 @@ class TimeSeries
       labels: labels,
       datasets: [
         {
+          label: "Expenses",
           data: data
         }
       ]

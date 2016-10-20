@@ -16,7 +16,11 @@ LINE_CHART_CONFIG = {
   scaleFontFamily: "'OpenSans'",
   scaleFontColor: '#ccc',
   fillColor: '#bbbbbb',
-  responsive: true
+  responsive: true,
+  label: "Expenses",
+  tooltips: {
+    enabled: false
+  },
 }
 
 DOUGHNUT_CHART_CONFIG = {
@@ -31,25 +35,42 @@ PIE_CHART_CONFIG = {
   segmentStrokeWidth: 2,
   responsive: false,
   animationSteps: 50,
+  tooltips: {
+    enabled: true
+  },
+  legend: {
+    display: false
+  },
   animationEasing: 'easeOutQuart'
 }
 
 $(".pie-chart").each (index, chart) =>
   data = $(chart).data("data")
-  new Chart($(chart).get(0).getContext("2d"), { data: data, options: PIE_CHART_CONFIG, type: 'pie' })
+  new Chart($(chart).get(0).getContext("2d"), {
+    data: data,
+    options: PIE_CHART_CONFIG,
+    type: 'pie'
+  })
 
 if $('#bar-chart').length > 0
   $canvas = $('#bar-chart');
   data = $canvas.data('data');
   context = $canvas[0].getContext('2d');
-  new Chart(context).Bar(data, BAR_CHART_CONFIG)
+  new Chart(context, {
+    data: data,
+    options: BAR_CHART_CONFIG,
+    type: 'bar'
+  })
 
 if $('#line-chart').length > 0
   $canvas = $('#line-chart');
   data = $canvas.data('data');
-
   context = $canvas[0].getContext('2d');
-  new Chart(context).Line(data, LINE_CHART_CONFIG)
+  new Chart(context, {
+    data: data,
+    options: LINE_CHART_CONFIG,
+    type: 'line'
+  })
 
 # Category spent charts
 $('.spent-chart').each (i, el) ->
