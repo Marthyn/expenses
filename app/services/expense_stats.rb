@@ -7,9 +7,8 @@ class ExpenseStats
   end
 
   def percentage_for_entity
-    return 0 if timerange_total == 0 || timerange_entity_total == 0
-    puts amount_for_timerange, amount_for_timerange
-    Float((amount_for_entity_timerange / amount_for_timerange) * 100).round()
+    return 0 if timerange_total.zero? || timerange_entity_total.zero?
+    Float((amount_for_entity_timerange / amount_for_timerange) * 100).round
   end
 
   def amount_for_timerange

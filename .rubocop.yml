@@ -1,0 +1,53 @@
+
+Documentation:
+  Enabled: false
+
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+
+Rails:
+  Enabled: true
+
+Metrics/AbcSize:
+  Max: 15
+Metrics/BlockNesting:
+  Max: 3
+Metrics/ClassLength:
+  CountComments: false  # count full line comments?
+  Max: 100
+Metrics/CyclomaticComplexity:
+  Max: 6
+Metrics/LineLength:
+  Max: 145
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 13
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
+
+Metrics/PerceivedComplexity:
+  Max: 7
+
+StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_filter :set_hashes_for_select
+  before_action :set_hashes_for_select
 
   def index
     @expense = Expense.new(date: Date.today, shop: Shop.by_usage.first, category: Category.by_usage.first)
@@ -13,9 +13,7 @@ class HomeController < ApplicationController
   def set_hashes_for_select
     @month_hash = []
     Date::MONTHNAMES.each_with_index do |name, index|
-      unless index == 0
-        @month_hash << [name, index]
-      end
+      @month_hash << [name, index] unless index.zero?
     end
     @year_hash = [2015, 2016, 2017]
   end
