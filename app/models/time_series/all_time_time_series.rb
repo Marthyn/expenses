@@ -5,7 +5,7 @@ class TimeSeries::AllTimeTimeSeries < TimeSeries
   end
 
   def divider
-    time_span.count / 200
+    time_span.count / 24
   end
 
   def time_span
