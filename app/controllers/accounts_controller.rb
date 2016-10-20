@@ -40,7 +40,7 @@ class AccountsController < ApplicationController
   def signup_params
     params.require(:signup)
           .permit(:account_name, :first_name, :last_name, :email,
-                    :password, :password_confirmation)
+                    :password, :password_confirmation, :monthly_budget)
   end
 
   def update_account_params

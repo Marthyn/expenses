@@ -9,7 +9,7 @@
 #  updated_at :datetime
 #
 
-class Account < ActiveRecord::Base
+class Account < ApplicationRecord
   validates :owner, presence: true
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 

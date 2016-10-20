@@ -1,4 +1,4 @@
-class Shop < ActiveRecord::Base
+class Shop < ApplicationRecord
   has_many :expenses
 
   scope :with_expenses, -> (timerange) {
